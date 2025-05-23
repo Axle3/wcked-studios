@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WCKED Studios</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap">
+</head>
+<body>
+  <header>
+    <img src="{{ url_for('static', filename='logo/wcked_logo.png') }}" alt="WCKED Logo" class="logo">
+    <img src="{{ url_for('static', filename='images/wcked_chrome.PNG') }}" alt="WCKED Studios" class="chrome-heading">
+  </header>
+
+  <div class="gallery-container">
+    <div class="gallery">
+      {% for art in artworks %}
+      <div class="art-card" onclick="openModal('{{ loop.index0 }}')">
+        <img src="{{ url_for('static', filename=art.image) }}" alt="{{ art.title }}">
+        <p class="title">{{ art.title }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="gallery-nav">
+      <button onclick="scrollGallery('left')"><i class="fas fa-chevron-left"></i></button>
+      <button onclick="scrollGallery('right')"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+
+  {% for art in artworks %}
+  <div class="modal" id="modal-{{ loop.index0 }}">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('{{ loop.index0 }}')">&times;</span>
+      <img src="{{ url_for('static', filename=art.image) }}" class="modal-art">
+      <div class="text-section">
+        <h2>{{ art.title }}</h2>
+        <p>{{ art.description }}</p>
+        <h3>Poem</h3>
+        <img src="{{ url_for('static', filename=art.poem) }}" class="poem-img">
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+  <footer>
+    <p>Contact Me:</p>
+    <p> <a href="mailto:wckedstudios@gmail.com"><i class="fas fa-envelope"></i> wckedstudios@gmail.com</a></p>
+    <p> <a href="https://www.instagram.com/wckedb0y/" target="_blank"><i class="fab fa-instagram"></i> @wckedb0y</a></p>
+    <p> <a href="https://x.com/wckedboy" target="_blank"><i class="fab fa-twitter"></i> @wckedboy</a></p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -164,10 +164,10 @@ def index():
             "poem": "poems/ROOTED IN RHYTHM P.jpg",
             "description": "rooted in rhythm, wrapped in love. Old school love still hits different"},
         {
-            "title": "THE FUTURE  A SNEAK PEEK",
-            "image": "images/THE FUTURE  A SNEAK PEEK.jpg",
-            "poem": "poems/THE FUTURE  A SNEAK PEEK P.jpg",
-            "description": "The Future  A Sneak Peek is a powerful exploration of the importance of looking beyond the present moment and envisioning a brighter future. The piece delves into the complexities of identity and the need to break free from societal expectations. Through its evocative imagery, it invites viewers to reflect on the importance of authenticity and the power of self-expression."
+            "title": "THE FUTURE:A SNEAK PEEK",
+            "image": "images/THE FUTURE:A SNEAK PEEK.jpg",
+            "poem": "poems/THE FUTURE:A SNEAK PEEK P.jpg",
+            "description": "This is a powerful exploration of the importance of looking beyond the present moment and envisioning a brighter future. The piece delves into the complexities of identity and the need to break free from societal expectations. Through its evocative imagery, it invites viewers to reflect on the importance of authenticity and the power of self-expression."
         },
         
         {
